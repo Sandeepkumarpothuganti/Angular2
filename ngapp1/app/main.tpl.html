@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+<strong>{{description}}</strong><hr>
+<h3>Course Description</h3>
+Id:<strong>{{course.id}}</strong> <br>
+Name:<strong>{{course.name}}</strong> <br>
+Duration:<strong>{{course.duration}}</strong> <br> 
+Cost:<strong>{{course.cost}}</strong> <br> 
+
+<hr>
+<h3>List Of Courses</h3>
+<ul>
+    <li *ngFor="#i of courseArray">
+        {{i}}
+    </li>
+</ul>
+<hr>
+<h3>Courses Information </h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Cost</th>
+    </tr>
+    <tr *ngFor="#course of courses"
+    (click)="getCourseInfo(course)"
+    >
+          <td>{{course.id}}</td>
+          <td>{{course.name}}</td>
+          <td>{{course.duration}}</td>
+          <td>{{course.cost}}</td>
+    </tr>
+</table>
+
+<button (click)="clickme(course.name)">click Me !!</button>
+
+
+
